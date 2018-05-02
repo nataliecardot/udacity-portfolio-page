@@ -1,0 +1,72 @@
+* {
+  /* Makes width and height include padding, border */
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: lighter;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2d3c49;
+}
+
+/* Top content */
+header {
+  width: 100%;
+  display: flex;
+  /* Lines evenly distributed; the first line is at start of container, last one is at end */
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/* logo img */
+.logo {
+  height: 90px;
+  width: auto;
+}
+
+/* Images cropped with 3:2 ratio, scaled resolution down to 600 x 400, (twice size to be resized to, as suggested in Udacity lesson) */
+.main-image {
+  width: 850px;
+  height: auto;
+}
+
+/* Applies to content within <main> element (excludes header, footer) */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+hr {
+  color: #7d97ad;
+}
+
+/* TODO: add declarations or remove if unneeded */
+.portfolio-header {
+  display: flex;
+  margin-right: auto;
+}
+
+/* Applies to project section (including header text) */
+.container-projects {
+  /* Must use again, even though already applies to parent container. TODO: find out why */
+  display: flex;
+  flex-direction: row;
+}
+
+/* Single project's title, image, text */
+/* TODO: add declarations */
+.project {
+
+}
+
+/* Images cropped with 3:2 ratio, scaled resolution down to 600 x 400 */
+.project-image {
+  height: 200px;
+  width: auto;
+}
