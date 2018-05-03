@@ -7,6 +7,7 @@
 body {
   font-family: "Raleway", sans-serif;
   font-weight: lighter;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,22 +16,37 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Top content */
 header {
-  width: 100%;
   display: flex;
-  /* Lines evenly distributed; the first line is at start of container, last one is at end */
-  justify-content: space-between;
-  flex-direction: row;
+  max-width: 850px;
+  margin: 0 auto;
+  margin-top: 1em;
+  /* Vertically centers logo  */
+  align-items: center;
 }
 
 /* logo img */
 .logo {
   height: 90px;
   width: auto;
+  margin-right: auto;
 }
 
-/* Images cropped with 3:2 ratio, scaled resolution down to 600 x 400, (twice size to be resized to, as suggested in Udacity lesson) */
+/* Only subtitle isn't aligned all the way to the right; this fixes it. TODO: figure out why doesn't apply to h1 text */
+.header-text {
+  display: flex;
+  justify-content: flex-end;
+}
+
+hr {
+  background-color: #7d97ad;
+  max-width: 850px;
+  margin-bottom: 1em;
+  border: none;
+  height: 3px;
+}
+
 .main-image {
-  width: 850px;
+  max-width: 850px;
   height: auto;
 }
 
@@ -40,33 +56,46 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-hr {
-  color: #7d97ad;
-}
-
-/* TODO: add declarations or remove if unneeded */
-.portfolio-header {
-  display: flex;
-  margin-right: auto;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 /* Applies to project section (including header text) */
 .container-projects {
-  /* Must use again, even though already applies to parent container. TODO: find out why */
   display: flex;
+  /* Parent container needs this for flex-item to take full width in row */
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 2em 0;
 }
 
-/* Single project's title, image, text */
+.portfolio-header {
+  /* Puts header in its own row without removing from container with row flex direction (setting parent container to wrap also required) */
+  width: 100%;
+}
+
+/* Div containing single project's title, image, text */
 /* TODO: add declarations */
 .project {
 
 }
 
+.project p, h3 {
+  text-align: center;
+}
+
 /* Images cropped with 3:2 ratio, scaled resolution down to 600 x 400 */
 .project-image {
-  height: 200px;
-  width: auto;
+  width: 300px;
+  height: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  background-color: #ccc;
+  color: white;
+  padding: 1em;
 }

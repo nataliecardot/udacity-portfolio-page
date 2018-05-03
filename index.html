@@ -15,15 +15,18 @@
     <!-- It's okay to style semantic element (rather than using div) when it's being used for semantic reason https://stackoverflow.com/questions/3549765/styling-html5-elements -->
     <header>
       <img src="https://image.ibb.co/jVeP4S/udacity_logo.png" alt="Udacity logo" class="logo">
-      <h1>Natalie Cardot</h1>
-      <h4>Aspring Web Developer</h4>
+      <!-- Header is set to display: flex, and it only works on direct children. Without the div, its default row alignment puts header text side by side, but inside a div, it works on the div as a block and since header text items are no longer direct children, it has no effect on them -->
+      <div>
+        <h1>Natalie Cardot</h1>
+        <h4 class="header-text">Front-End Web Developer</h4>
+      </div>
     </header>
     <!-- TODO: put inside main? But makes it disappear -->
     <hr>
     <main class="container">
       <img src="https://image.ibb.co/cTcuM7/using_laptop_large.jpg" alt="Woman using laptop at home during the day" class="main-image">
-      <h4 class="portfolio-header">Featured Work</h4>
-      <div class="container-projects">
+      <section class="container-projects">
+        <h4 class="portfolio-header">Featured Work</h4>
         <div class="project">
           <img class="project-image" src="https://image.ibb.co/hv4c8n/santorini_small.jpg" alt="View from island of Santorini on a sunny day">
           <h3>Project No. 1</h3>
@@ -39,7 +42,7 @@
           <h3>Project No. 3</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
-      </div> <!-- End of container-projects -->
+      </section> <!-- End of container-project -->
     </main>
     <footer>
     <p>Created by me</p>
