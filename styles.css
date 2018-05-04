@@ -5,19 +5,31 @@
 }
 
 body {
-  font-family: "Raleway", sans-serif;
-  font-weight: lighter;
+  font-family: "Quicksand", sans-serif;
   margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #2d3c49;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-weight: 200;
+  /* Browsers typically display h1 as 2em */
+  font-size: 2.6em;
+  margin-bottom: 0;
+}
+
+/* Adds a bit of space above subtitle (set h1 bottom margin to 0) */
+header h4 {
+  margin-top: 7px;
 }
 
 /* Top content */
 header {
   display: flex;
-  max-width: 850px;
+  max-width: 1000px;
   margin: 0 auto;
   margin-top: 1em;
   /* Vertically centers logo  */
@@ -39,14 +51,14 @@ header {
 
 hr {
   background-color: #7d97ad;
-  max-width: 850px;
+  max-width: 1000px;
   margin-bottom: 1em;
   border: none;
   height: 3px;
 }
 
 .main-image {
-  max-width: 850px;
+  max-width: 1000px;
   height: auto;
 }
 
@@ -56,7 +68,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 850px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -73,12 +85,15 @@ hr {
 .portfolio-header {
   /* Puts header in its own row without removing from container with row flex direction (setting parent container to wrap also required) */
   width: 100%;
+  text-align: left;
+  color: #7d97ad;
 }
 
 /* Div containing single project's title, image, text */
 /* TODO: add declarations */
 .project {
-
+  width: 300px;
+  height: auto;
 }
 
 .project p, h3 {
@@ -92,10 +107,67 @@ hr {
 }
 
 footer {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-top: 1em;
   background-color: #ccc;
   color: white;
-  padding: 1em;
+  padding: 2em;
+  font-size: 1.1em;
+}
+
+/* Remove default 1em margin-top */
+footer p {
+  margin-top: 0;
+}
+
+/* Applies to Font Awesome social icons */
+.fab {
+  margin: 0 0.5em;
+  color: white;
+}
+
+/* Changes social icon color to dark grey on hover */
+.fab:hover {
+  color: #2d3c49;
+}
+
+/* Special styling for screens up to 767px wide, inclusive (applies to landscape phones) */
+@media screen and (max-width: 767px) {
+  header, .container, footer {
+    max-width: 100%;
+  }
+
+  /* Must specify max-width for img even though parent .container has the same declaration because max-width isn't inherited */
+  .container img {
+    max-width: 100%;
+  }
+
+  .project {
+    /* Centers projects (aligned left otherwise) */
+    margin: 0 auto;
+  }
+
+}
+
+/* Media queries for text (correspond to Bootstrap breakpoints). 1rem = 16px */
+
+/* Small devices (landscape phones) */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Small laptops */
+@media screen and (max-width: 1199px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
