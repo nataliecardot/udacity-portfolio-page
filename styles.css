@@ -117,7 +117,7 @@ footer {
   text-align: center;
   margin-top: 1em;
   background-color: #ccc;
-  color: white;
+  color: #fff;
   padding: 2em;
   font-size: 1.1em;
 }
@@ -130,7 +130,7 @@ footer p {
 /* Applies to Font Awesome social icons */
 .fab {
   margin: 0 0.5em;
-  color: white;
+  color: #fff;
 }
 
 /* Changes social icon color to dark grey on hover */
