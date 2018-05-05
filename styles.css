@@ -13,6 +13,8 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
+/* Header */
+
 h1 {
   /* Disables h1 default bold styling */
   font-weight: 200;
@@ -49,6 +51,8 @@ header {
   justify-content: flex-end;
 }
 
+/* Divider line/top image */
+
 hr {
   background-color: #7d97ad;
   max-width: 1000px;
@@ -71,6 +75,8 @@ hr {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+/* Projects section */
 
 /* Applies to project section (including header text) */
 .container-projects {
@@ -104,6 +110,8 @@ hr {
   width: 300px;
   height: auto;
 }
+
+/* Footer */
 
 footer {
   text-align: center;
