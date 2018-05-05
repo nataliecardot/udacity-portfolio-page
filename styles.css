@@ -64,6 +64,7 @@ hr {
 .main-image {
   max-width: 1000px;
   height: auto;
+  margin-bottom: 1.5em;
 }
 
 /* Applies to content within <main> element (excludes header, footer) */
@@ -78,21 +79,20 @@ hr {
 
 /* Projects section */
 
-/* Applies to project section (including header text) */
-.container-projects {
-  display: flex;
-  /* Parent container needs this for flex-item to take full width in row */
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 2em 0;
-}
-
 .projects-header {
-  /* Puts header in its own row without removing from container with row flex direction (setting parent container to wrap also required) */
   width: 100%;
   text-align: left;
   color: #7d97ad;
+}
+
+/* Applies to project section (excludes header text; if it is included, browser will think it's its own box, causing layout bug on certain viewport sizes) */
+.container-projects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 2em;
 }
 
 /* Div containing single project's title, image, text */
@@ -138,12 +138,26 @@ footer p {
   color: #2d3c49;
 }
 
-/* Media queries (breakpoints correspond to Bootstrap breakpoints). 1rem = 16px */
+/* Media queries (breakpoints correspond to Bootstrap breakpoints). 1rem = 16px. Order matters; must put queries from largest to smallest max width */
+
+/* Small laptops */
+@media screen and (max-width: 1199px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 991px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+}
 
 /* Small devices (landscape phones) */
 @media screen and (max-width: 767px) {
   h1 {
-    font-size: 1.6em !important;
+    font-size: 1.6em;
   }
 
   h2 {
@@ -164,7 +178,7 @@ footer p {
   }
 
   header {
-    margin: 0 1em 0 0;
+    margin: 0 1.5em 0 0.5em;
   }
 
   header, .container, footer {
@@ -186,7 +200,7 @@ footer p {
   .projects-header {
     /* Increased width by 20px */
     width: 320px;
-    margin: 10px auto;
+    margin: 10px auto 0 auto;
   }
 
   /* Div containing single project's title, image, text */
@@ -201,19 +215,5 @@ footer p {
   .project-image {
     width: 320px;
     height: auto;
-  }
-}
-
-/* Tablets */
-@media screen and (max-width: 991px) {
-  h1 {
-    font-size: 1.7rem;
-  }
-}
-
-/* Small laptops */
-@media screen and (max-width: 1199px) {
-  h1 {
-    font-size: 2rem;
   }
 }
