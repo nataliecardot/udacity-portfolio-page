@@ -1,7 +1,6 @@
 * {
   /* Makes width and height include padding, border */
   box-sizing: border-box;
-  max-width: 100%;
 }
 
 body {
@@ -15,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  /* Disables h1 default bold styling */
   font-weight: 200;
   /* Browsers typically display h1 as 2em */
   font-size: 2.6em;
@@ -43,7 +43,7 @@ header {
   margin-right: auto;
 }
 
-/* Only subtitle isn't aligned all the way to the right; this fixes it. TODO: figure out why doesn't apply to h1 text */
+/* Aligns h4 text in header to be flush right rather than aligned flush left with left edge of h1 text (caused by logo's right auto margin) */
 .header-text {
   display: flex;
   justify-content: flex-end;
@@ -82,7 +82,7 @@ hr {
   margin: 2em 0;
 }
 
-.portfolio-header {
+.projects-header {
   /* Puts header in its own row without removing from container with row flex direction (setting parent container to wrap also required) */
   width: 100%;
   text-align: left;
@@ -90,7 +90,6 @@ hr {
 }
 
 /* Div containing single project's title, image, text */
-/* TODO: add declarations */
 .project {
   width: 300px;
   height: auto;
@@ -131,8 +130,35 @@ footer p {
   color: #2d3c49;
 }
 
-/* Special styling for screens up to 767px wide, inclusive (applies to landscape phones) */
+/* Media queries (breakpoints correspond to Bootstrap breakpoints). 1rem = 16px */
+
+/* Small devices (landscape phones) */
 @media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.6em !important;
+  }
+
+  h2 {
+  font-size: 1.3em;
+  }
+
+  h3 {
+  font-size: 1.1em;
+  }
+
+  h4 {
+    font-size: 0.8em;
+  }
+
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+
+  header {
+    margin: 0 1em 0 0;
+  }
+
   header, .container, footer {
     max-width: 100%;
   }
@@ -142,19 +168,31 @@ footer p {
     max-width: 100%;
   }
 
-  .project {
-    /* Centers projects (aligned left otherwise) */
-    margin: 0 auto;
+  /* Applies to project section (including header text) */
+  .container-projects {
+    /* Originally margin: 2em 0 */
+    margin: 1.5em 0 0 0;
   }
 
-}
+  /* Aligns portfolio header text flush left of portfolio rows */
+  .projects-header {
+    /* Increased width by 20px */
+    width: 320px;
+    margin: 10px auto;
+  }
 
-/* Media queries for text (correspond to Bootstrap breakpoints). 1rem = 16px */
+  /* Div containing single project's title, image, text */
+  .project {
+    width: 320px;
+    height: auto;
+    /* Top, left/right, bottom. Centers projects (aligned left otherwise) */
+    margin: 0 auto 1.2em;
+  }
 
-/* Small devices (landscape phones) */
-@media screen and (max-width: 767px) {
-  h1 {
-    font-size: 1.5rem;
+  /* Images cropped with 3:2 ratio, scaled resolution down to 600 x 400 */
+  .project-image {
+    width: 320px;
+    height: auto;
   }
 }
 
